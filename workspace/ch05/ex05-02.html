@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-size: 0;
+        height: 100vh;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+      }
+      h1 {
+        font-size: 6rem;
+      }
+      #container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        gap: 2rem;
+        > button:first-child {
+          &:hover {
+            color: #ff4931;
+          }
+        }
+        > button:last-child {
+          &:hover {
+            color: #22d948;
+          }
+        }
+      }
+      span,
+      button {
+        font-size: 3rem;
+      }
+      span {
+        display: block;
+        text-align: center;
+        width: 4rem;
+      }
+      button {
+        margin: 0;
+        padding: 0;
+        width: 3rem;
+        height: 3rem;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 50%;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Counter</h1>
+    </header>
+    <div id="container">
+      <button>-</button>
+      <span>0</span>
+      <button>+</button>
+    </div>
+    <script>
+      // id가 "container인 요소 찾기"
+      const container = document.getElementById("container");
+      container.children[0].addEventListener("click", function () {
+        container.children[1].firstChild.nodeValue--;
+      });
+      container.children[2].addEventListener("click", function () {
+        container.children[1].firstChild.nodeValue++;
+      });
+
+      const header = container.previousElementSibling;
+      const h1 = header.children;
+    </script>
+  </body>
+</html>
