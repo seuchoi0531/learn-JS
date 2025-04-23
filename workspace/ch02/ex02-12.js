@@ -6,12 +6,12 @@
 */
 
 console.log(a);
-console.log(b);
-console.log(c);
+// console.log(b);
+// console.log(c);
 
-var a = 10;
-let b = 20;
-const c = 30;
+var a = 10; // 호이스팅 단계에서 undefined로 초기화 됨
+let b = 20; // 호이스팅 단계에서 선언만 되고 초기화가 안됨
+const c = 30; // 호이스팅 단계에서 선언만 되고 초기화가 안됨
 
 console.log(a);
 console.log(b);

@@ -1,39 +1,36 @@
 /*
-if문을 사용하여 학점을 출력하세요.
+switch문을 사용하여 학점을 출력하세요.
 */
 
-// score가 90 이상 100 이하이면 "A" 출력
+// 점수 변수 선언
+const score = 100;
 
-// score가 80 이상 90 미만이면 "B" 출력
+// 점수를 10으로 나누고 정수 부분만 추출하는 방법
+// 예시:
+// 67/10 -> parseInt(6.7) -> 6
+// 36.6/10 -> parseInt(3.66) -> 3
+// 99/10 -> parseInt(9.9) -> 9
 
-// score가 70 이상 80 미만이면 "C" 출력
-
-// score가 60 이상 70 미만이면 "D" 출력
-
-// score가 60 미만이면 "F" 출력
-
-const score = 79;
-let rst = null;
-
-if (score >= 90) rst = "A";
-else if (score >= 80) rst = "B";
-else if (score >= 70) rst = "C";
-else if (score >= 60) rst = "D";
-else rst = "F";
-
-switch (rst) {
-  case "A":
-    console.log("A");
+// switch문을 사용하여 학점 계산
+// 90점 이상: A
+// 80점 이상: B
+// 70점 이상: C
+// 60점 이상: D
+// 60점 미만: F
+switch (parseInt(score/10)) {
+  case 10:  // 100점
+  case 9:   // 90-99점
+    console.log('A');
     break;
-  case "B":
-    console.log("B");
+  case 8:   // 80-89점
+    console.log('B');
     break;
-  case "C":
-    console.log("C");
+  case 7:   // 70-79점
+    console.log('C');
     break;
-  case "D":
-    console.log("D");
+  case 6:   // 60-69점
+    console.log('D');
     break;
-  default:
-    console.log("F");
+  default:  // 60점 미만
+    console.log('F');
 }
